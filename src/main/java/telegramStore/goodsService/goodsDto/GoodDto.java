@@ -2,16 +2,20 @@ package telegramStore.goodsService.goodsDto;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.util.UUID;
+
 @Data
 public class GoodDto {
-    private UUID uuid;
 
-    private UUID storeUuid;
+    private UUID productId;
 
-    private  String name;
+    private int storeId;
 
-    private int quantity;
 
-    private double price;
+    private String name;
+
+    private int goodsQuantity;
+
+    private BigDecimal price;
 }

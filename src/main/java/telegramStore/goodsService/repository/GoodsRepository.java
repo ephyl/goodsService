@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 @Repository
 public interface GoodsRepository extends JpaRepository<Good, UUID> {
-    List<Good> findByStoreIdAndQuantityIsGreaterThan(int storeId, int quantity);
+    List<Good> findByStoreIdAndGoodsQuantityIsGreaterThan(int storeId, int goodsQuantity);
 
 
 

@@ -1,5 +1,6 @@
 package telegramStore.goodsService.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,15 +19,15 @@ public class GoodsController {
         this.goodsService = goodsService;
     }
 
-    @GetMapping("/{id}")
-    List<GoodDto> getAllGoodsFromStoreWithId(@PathVariable String id) {
-        return goodsService.getAllGoodsDtoByStoreID(Integer.parseInt(id));
+    @GetMapping("/{storeId}")
+    List<GoodDto> getAllGoodsFromStoreWithId(@PathVariable String storeId) {
+        return goodsService.getAllGoodsDtoByStoreID(Integer.parseInt(storeId));
     }
     @PostMapping()
     ResponseEntity<Integer> reduceQuantities(@RequestBody List<GoodDto> goodsDtoList) {
-
         Integer count = goodsService.reduceQuantity(goodsDtoList);
         return ResponseEntity.ok(count);
     }
+
 
 }

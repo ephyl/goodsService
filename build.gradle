@@ -26,18 +26,26 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	implementation 'org.liquibase:liquibase-core'
+//	implementation 'org.liquibase:liquibase-core'
 	implementation 'org.springframework.kafka:spring-kafka'
-	implementation group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.5.5.Final'
-	implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.5.5.Final'
-
-	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.5.3.Final'
+	implementation group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.5.3.Final'
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+
+
+	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+	annotationProcessor group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.5.3.Final'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+compileJava {
+	options.compilerArgs += [
+			'-Amapstruct.defaultComponentModel=spring'
+	]
 }

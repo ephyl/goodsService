@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: local
   datasource:
     driver-class-name: org.postgresql.Driver
     username: super_admin
@@ -7,5 +9,3 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-  liquibase:
-    change-log:
