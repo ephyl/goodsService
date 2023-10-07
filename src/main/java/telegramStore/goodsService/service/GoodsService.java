@@ -1,15 +1,15 @@
 package telegramStore.goodsService.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Service;
 import telegramStore.goodsService.entity.Good;
 import telegramStore.goodsService.goodsDto.GoodDto;
 import telegramStore.goodsService.repository.GoodsRepository;
 import telegramStore.goodsService.util.mapper.GoodsMapper;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -37,4 +37,16 @@ public class GoodsService {
         return count;
     }
 
+    public GoodDto getGoodDtoByGoodID(UUID uuid) {
+        Good good = repository.findById(uuid).orElseThrow(RuntimeException::new);
+        GoodsMapper mapper = Mappers.getMapper(GoodsMapper.class);
+
+        return mapper.sourceToDestination(good);
+    }
+
+    public GoodDto create(GoodDto goodDto) {
+        GoodsMapper mapper = Mappers.getMapper(GoodsMapper.class);
+
+        return mapper.sourceToDestination(repository.save(mapper.destinationToSource(goodDto)));
+    }
 }

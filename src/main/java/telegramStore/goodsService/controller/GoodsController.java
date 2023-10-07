@@ -11,18 +11,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/goods")
+@RequiredArgsConstructor
 public class GoodsController {
     private final GoodsService goodsService;
-
-    @Autowired
-    public GoodsController(GoodsService goodsService) {
-        this.goodsService = goodsService;
-    }
 
     @GetMapping("/{storeId}")
     List<GoodDto> getAllGoodsFromStoreWithId(@PathVariable String storeId) {
         return goodsService.getAllGoodsDtoByStoreID(Integer.parseInt(storeId));
     }
+
     @PostMapping()
     ResponseEntity<Integer> reduceQuantities(@RequestBody List<GoodDto> goodsDtoList) {
         Integer count = goodsService.reduceQuantity(goodsDtoList);

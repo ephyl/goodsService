@@ -12,7 +12,6 @@ public class GoodDto {
 
     private int storeId;
 
-
     private String name;
 
     private int goodsQuantity;
