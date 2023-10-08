@@ -10,6 +10,4 @@ import java.util.UUID;
 public interface GoodsRepository extends JpaRepository<Good, UUID> {
     List<Good> findByStoreIdAndGoodsQuantityIsGreaterThan(int storeId, int goodsQuantity);
 
-
-
 }

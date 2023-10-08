@@ -8,6 +8,5 @@ import telegramStore.goodsService.goodsDto.GoodDto;
 public interface GoodsMapper {
     GoodDto sourceToDestination(Good good);
     Good destinationToSource(GoodDto goodDto);
-
     GoodDto toGoodDto(Good good);
 }
