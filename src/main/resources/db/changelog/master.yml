@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: ephyl
+      changes:
+        - createTable:
+            tableName: goods
+            columns:
+              - column:
+                  name: product_id
+                  type: uuid
+                  #                     autoIncrement:  true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: store_id
+                  type: int
+              - column:
+                  name: name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: quantity
+                  type: int
+              - column:
+                  name: price
+                  type: decimal(10,2)
+                  constraints:
+                    nullable: true
+  - changeSet:
+      id: load-goods-Data
+      author: ephyl
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: product_id
+                  name: product_id
+                  type: uuid
+              - column:
+                  header: store_id
+                  name: store_id
+                  type: numeric
+              - column:
+                  header: name
+                  name: name
+                  type: varchar
+              - column:
+                  header: quantity
+                  name: quantity
+                  type: numeric
+              - column:
+                  header: price
+                  name: price
+                  type: numeric
+            commentLineStartsWith: //
+            encoding: UTF-8
+            file: db/changelog/data/dataSourceFile.csv
+            quotchar: ''''
+            schemaName: public
+            separator: ;
+            tableName: goods
+            usePreparedStatements: true

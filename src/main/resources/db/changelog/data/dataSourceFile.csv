@@ -1,0 +1,6 @@
+product_id;store_id;name;quantity;price
+15ed7bb1-597b-40d1-8cf7-25f80dce72d4;1;TV From Store # 1;3;50000
+97cd94f5-bab8-4a99-b6d2-1bf82f11b474;1;LAPTOP From Store # 1;2;90000
+4d641a46-15c1-40ee-92bc-dbb151d6c83a;2;SMARTPHONE From Store #2;10;100000
+4b1c87ef-602f-437b-8963-67c38295bb0a;2;PRINTER From Store #2;1;20000
+a9b2405b-0409-4f93-aa9f-69d74d53f5fd;3;PINK UNICORN From Store #3;3;30000.5
