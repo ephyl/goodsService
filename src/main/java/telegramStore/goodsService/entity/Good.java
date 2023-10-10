@@ -1,34 +1,42 @@
 package telegramStore.goodsService.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "goods")
 public class Good {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID uuid;
+    @Column(name="product_id")
+    private UUID productId;
 
     @Column(name = "store_id")
     private int storeId;
 
     @Column(name = "name")
-    private  String name;
+    private String name;
 
     @Column(name = "quantity")
-    private int quantity;
+    private int goodsQuantity;
 
     @Column(name = "price")
-    private double price;
+    private BigDecimal price;
 
 
 }

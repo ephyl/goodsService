@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: local
   datasource:
     driver-class-name: org.postgresql.Driver
     username: super_admin
@@ -6,6 +8,8 @@ spring:
     url: jdbc:postgresql://localhost:5432/postgres
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
   liquibase:
-    change-log:
+    change-log: "classpath:db/changelog/master.yml"
+server:
+   port: 8096

@@ -10,24 +10,23 @@ import org.springframework.web.bind.annotation.RestController;
 import telegramStore.goodsService.goodsDto.GoodDto;
 import telegramStore.goodsService.service.GoodService;
 
-import java.util.List;
+import java.util.UUID;
 
 @RestController
-@RequestMapping("/goods")
+@RequestMapping("/good")
 @RequiredArgsConstructor
-public class GoodsController {
+public class GoodController {
 
     private final GoodService goodService;
 
-    @GetMapping("/{storeId}")
-    public List<GoodDto> getAllGoodsFromStoreWithId(@PathVariable String storeId) {
-        return goodService.getAllGoodsDtoByStoreID(Integer.parseInt(storeId));
+    @GetMapping("/{uuid}")
+    GoodDto getOneGoodBYId(@PathVariable String uuid) {
+        return goodService.getGoodDtoByGoodID(UUID.nameUUIDFromBytes(uuid.getBytes()));
     }
 
-    @PostMapping
-    public Integer reduceQuantities(@RequestBody List<GoodDto> goodsDtoList) {
-        return goodService.reduceQuantity(goodsDtoList);
+    @PostMapping()
+    GoodDto addGood(@RequestBody GoodDto goodDto) {
+        return goodService.create(goodDto);
     }
-
 
 }
