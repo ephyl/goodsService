@@ -19,9 +19,9 @@ public class GoodController {
 
     private final GoodService goodService;
 
-    @GetMapping("/{uuid}")
-    GoodDto getOneGoodBYId(@PathVariable String uuid) {
-        return goodService.getGoodDtoByGoodID(UUID.nameUUIDFromBytes(uuid.getBytes()));
+    @GetMapping("/{id}")
+    GoodDto getOneGoodBYId(@PathVariable Long id) {
+        return goodService.getGoodDtoByGoodID(id);
     }
 
     @PostMapping()

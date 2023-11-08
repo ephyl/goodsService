@@ -7,7 +7,7 @@ import telegramStore.goodsService.entity.Good;
 import java.util.List;
 import java.util.UUID;
 @Repository
-public interface GoodsRepository extends JpaRepository<Good, UUID> {
+public interface GoodsRepository extends JpaRepository<Good, Long> {
     List<Good> findByStoreIdAndGoodsQuantityIsGreaterThan(int storeId, int goodsQuantity);
 
 }

@@ -1,4 +1,6 @@
 spring:
+  main:
+    allow-bean-definition-overriding: true
   profiles:
     active: local
   datasource:
@@ -13,3 +15,7 @@ spring:
     change-log: "classpath:db/changelog/master.yml"
 server:
    port: 8096
+
+logging:
+  level:
+    root: debug

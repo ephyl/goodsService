@@ -8,7 +8,7 @@ import java.util.UUID;
 @Data
 public class GoodDto {
 
-    private UUID productId;
+    private Long productId;
 
     private int storeId;
 

@@ -8,7 +8,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: product_id
-                  type: uuid
+                  type: bigint
                   #                     autoIncrement:  true
                   constraints:
                     primaryKey: true
@@ -38,7 +38,7 @@ databaseChangeLog:
               - column:
                   header: product_id
                   name: product_id
-                  type: uuid
+                  type: numeric
               - column:
                   header: store_id
                   name: store_id

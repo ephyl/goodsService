@@ -43,8 +43,8 @@ public class GoodsServiceImpl implements GoodService {
     }
 
     @Override
-    public GoodDto getGoodDtoByGoodID(UUID uuid) {
-        Good good = repository.findById(uuid).orElseThrow(RuntimeException::new);
+    public GoodDto getGoodDtoByGoodID(Long id) {
+        Good good = repository.findById(id).orElseThrow(RuntimeException::new);
         GoodsMapper mapper = Mappers.getMapper(GoodsMapper.class);
 
         return mapper.sourceToDestination(good);

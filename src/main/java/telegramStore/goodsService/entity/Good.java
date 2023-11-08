@@ -22,9 +22,9 @@ import java.util.UUID;
 @Table(name = "goods")
 public class Good {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="product_id")
-    private UUID productId;
+    private Long productId;
 
     @Column(name = "store_id")
     private int storeId;

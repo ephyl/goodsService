@@ -11,7 +11,7 @@ public interface GoodService {
 
     Integer reduceQuantity(List<GoodDto> goodDtoList);
 
-    GoodDto getGoodDtoByGoodID(UUID uuid);
+    GoodDto getGoodDtoByGoodID(Long id);
 
     GoodDto create(GoodDto goodDto);
 }
