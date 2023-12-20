@@ -1,1 +1,3 @@
 rootProject.name = 'goodsService'
+include 'common-logging-starter'
+

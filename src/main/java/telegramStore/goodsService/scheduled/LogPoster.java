@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class LogPoster {
     private final static Logger LOGGER = LoggerFactory.getLogger(LogPoster.class);
-    @Scheduled(fixedRate = 200)
-    public void postInfo() {
-        LOGGER.warn("WJWHJHWJHW");
-    }
+//    @Scheduled(fixedRate = 200)
+//    public void postInfo() {
+//        LOGGER.warn("WJWHJHWJHW");
+//    }
 
 }

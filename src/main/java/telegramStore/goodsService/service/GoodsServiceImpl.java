@@ -1,6 +1,5 @@
 package telegramStore.goodsService.service;
 
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Service;
@@ -9,8 +8,8 @@ import telegramStore.goodsService.goodsDto.GoodDto;
 import telegramStore.goodsService.repository.GoodsRepository;
 import telegramStore.goodsService.util.mapper.GoodsMapper;
 
+import javax.transaction.Transactional;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service

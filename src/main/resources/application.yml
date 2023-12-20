@@ -5,8 +5,8 @@ spring:
     active: local
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: super_admin
-    password: SomeSecretPassword
+    username: egor
+    password: admin123
     url: jdbc:postgresql://localhost:5432/postgres
   jpa:
     hibernate:
@@ -18,4 +18,10 @@ server:
 
 logging:
   level:
-    root: debug
+    root: info
+
+app:
+  common:
+    logging:
+      enabled: true
+      level: INFO
